@@ -37,3 +37,4 @@ gem 'hexp', github: 'plexus/hexp'
 gem 'foreman'
 gem 'coercible'
 gem "paperclip", "~> 3.0"
+gem 'puma'
