@@ -5,7 +5,11 @@ class BooksController < ApplicationController
   end
 
   def process_mails
+    logger = StringIO.new
+    Mailman.config.logger = Logger.new(logger)
     MailReader.new(MailReader::Config.from_env).run
-    render :inline => 'OK'
+    Mailman.config.logger = Logger.new(STDOUT)
+
+    render :inline => logger.string, :content_type => "text/plain"
   end
 end
