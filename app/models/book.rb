@@ -1,8 +1,11 @@
 class Book < ActiveRecord::Base
   has_attached_file :image, styles: { medium: "300x300>", thumb: "100x100>" }
 
-  def self.create_from_message!(message)
+  def self.by_date
+    self.all.sort_by(&:date_time).reverse
+  end
 
+  def self.create_from_message!(message)
     file = nil
 
     unless message.attachments.empty?
@@ -34,6 +37,6 @@ class Book < ActiveRecord::Base
   end
 
   def date_time
-    exif.date_time_original
+    exif.date_time_original || finish_date
   end
 end

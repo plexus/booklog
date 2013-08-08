@@ -1,6 +1,6 @@
 class BooksController < ApplicationController
   def index
-    @books = Book.all
+    @books = Book.by_date
     render :inline => BooksPage.new(self, @books).to_html
   end
 
