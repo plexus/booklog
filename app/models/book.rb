@@ -29,4 +29,11 @@ class Book < ActiveRecord::Base
     end
   end
 
+  def exif
+    EXIFR::JPEG.new(image.path)
+  end
+
+  def date_time
+    exif.date_time_original
+  end
 end

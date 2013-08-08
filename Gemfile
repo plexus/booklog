@@ -41,3 +41,6 @@ gem 'coercible'
 gem "paperclip", "~> 3.0"
 gem 'puma'
 gem 'rspec-rails'
+gem 'exifr'
+gem 'less-rails'
+gem 'twitter-bootstrap-rails'

@@ -1,7 +1,7 @@
 class BooksController < ApplicationController
   def index
     @books = Book.all
-    render :inline => BooksPage.new(@books).to_html
+    render :inline => BooksPage.new(session, @books).to_html
   end
 
   def process_mails
