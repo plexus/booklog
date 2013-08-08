@@ -16,3 +16,6 @@
 /tmp
 
 .env
+
+# Paperclip images, will have to come up with another back up scheme for this
+public/system

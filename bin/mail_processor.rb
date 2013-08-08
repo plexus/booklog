@@ -13,8 +13,15 @@ Mailman.config.pop3 = {
   :ssl      => ENV.has_key?('POP3_SSL') ? coercer[String].to_boolean(ENV['POP3_SSL']) : true
 }
 
-Mailman::Application.run do
-  to ENV['POP3_USERNAME'] do
-    Book.create_from_message!(message)
+Mailman.config.poll_interval = 0 # do not poll, just run once
+
+begin
+  Mailman::Application.run do
+    to ENV['POP3_USERNAME'] do
+      Book.create_from_message!(message)
+    end
   end
+rescue Net::OpenTimeout
+  $stderr.puts "Got timeout from Mailman, retrying"
+  retry
 end

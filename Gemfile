@@ -12,6 +12,7 @@ gem 'jbuilder', '~> 1.2'
 
 group :development do
   gem 'sqlite3'
+  gem 'pry'
 end
 
 gem 'pg'
@@ -39,3 +40,4 @@ gem 'foreman'
 gem 'coercible'
 gem "paperclip", "~> 3.0"
 gem 'puma'
+gem 'rspec-rails'
