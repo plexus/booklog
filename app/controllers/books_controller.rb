@@ -1,4 +1,8 @@
 class BooksController < ApplicationController
+  extend Paperclip::Storage::Database::ControllerClassMethods
+
+  downloads_files_for :book, :image
+
   def index
     @books = Book.by_date
     render :inline => BooksPage.new(self, @books).to_html

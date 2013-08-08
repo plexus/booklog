@@ -45,3 +45,5 @@ gem 'rspec-rails'
 gem 'exifr'
 
 gem 'sprockets-rails'
+gem 'paperclip_database', github: 'plexus/paperclip_database'
+gem 'trim_blobs'

@@ -11,7 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130808133539) do
+ActiveRecord::Schema.define(version: 20130808204222) do
+
+  create_table "book_images", force: true do |t|
+    t.integer "book_id"
+    t.string  "style"
+    t.binary  "file_contents"
+  end
 
   create_table "books", force: true do |t|
     t.string   "title"

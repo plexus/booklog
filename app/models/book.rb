@@ -1,5 +1,8 @@
 class Book < ActiveRecord::Base
-  has_attached_file :image, styles: { medium: "300x300>", thumb: "100x100>" }
+  has_attached_file :image,
+                    storage: :database,
+                    database_table: 'book_images',
+                    styles: { medium: "300x300>", thumb: "100x100>" }
 
   def self.by_date
     self.all.sort_by(&:date_time).reverse
@@ -36,7 +39,7 @@ class Book < ActiveRecord::Base
   end
 
   def exif
-    EXIFR::JPEG.new(image.path)
+    EXIFR::JPEG.new(image.to_file(:original).path)
   end
 
   def date_time
