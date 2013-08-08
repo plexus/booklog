@@ -211,5 +211,6 @@ DEPENDENCIES
   rspec-rails
   sass-rails (~> 4.0.0)
   sdoc
+  sprockets-rails
   sqlite3
   uglifier (>= 1.3.0)

@@ -4,6 +4,7 @@ Booklog::Application.routes.draw do
   root 'books#index'
 
   get 'process' => 'books#process_mails'
+  get 'test' => 'books#test'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

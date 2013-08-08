@@ -1,6 +1,7 @@
 class Page < Widget
   include ActiveSupport::Configurable
   include ActionController::RequestForgeryProtection
+  include Sprockets::Rails::Helper
   include Page::AssetHelpers
 
   attr_accessor :head, :body, :session

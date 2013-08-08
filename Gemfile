@@ -43,3 +43,5 @@ gem "paperclip", "~> 3.0"
 gem 'puma'
 gem 'rspec-rails'
 gem 'exifr'
+
+gem 'sprockets-rails'

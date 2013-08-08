@@ -12,4 +12,7 @@ class BooksController < ApplicationController
 
     render :inline => logger.string, :content_type => "text/plain"
   end
+
+  def test
+  end
 end
