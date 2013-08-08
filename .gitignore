@@ -19,4 +19,4 @@
 
 # Paperclip images, will have to come up with another back up scheme for this
 public/system
-public/assets
+#public/assets
