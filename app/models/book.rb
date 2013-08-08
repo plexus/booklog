@@ -13,9 +13,12 @@ class Book < ActiveRecord::Base
       file = save_attachment(attachment)
     end
 
+    date = message.text_part.to_s[/date:(.*)/, 1]
+
     self.create!(
       title: message.subject,
-      image: file
+      image: file,
+      finish_date: (DateTime.parse(date) if date)
     )
   end
 

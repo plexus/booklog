@@ -4,6 +4,7 @@ Dir['/home/arne/github/arnebrasseur.net/source/booklog/*.md'].each do |file|
   contents = File.read(file)
   title = contents[/title: (.*)$/, 1]
   image = contents[/image: (.*)$/, 1]
+  date  = contents[/date: (.*)$/, 1]
 
-  puts "mailx -v -A gmail -s \"#{title}\" -a ~/github/arnebrasseur.net/source/booklog/#{image} booklog@arnebrasseur.net <<< ''"
+  puts "mailx -v -A gmail -s \"#{title}\" -a ~/github/arnebrasseur.net/source/booklog/#{image} booklog@arnebrasseur.net <<< 'date: #{date}'"
 end
