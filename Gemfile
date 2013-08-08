@@ -13,6 +13,7 @@ gem 'jbuilder', '~> 1.2'
 group :development do
   gem 'sqlite3'
   gem 'pry'
+  gem 'pry-debugger'
 end
 
 gem 'pg'
